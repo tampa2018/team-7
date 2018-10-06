@@ -3,10 +3,6 @@
 
 var postID = 0;
 
-var post{
-  "postText"=
-}
-
 function addPost() {
   postID++;
   addDiv('w3-col l8 s12', 'card' + postID, 'w3-card-4 w3-margin w3-white');
@@ -64,13 +60,9 @@ function addDiv(parentId, elementID, classID){
 
 function reArrange(){
   var wrapper = document.getElementsByClassName("w3-col l8 s12");
-  var items = wrapper[0].children;
-  var arr = {};
-  var list = {};
-  for (let i = 0; i < items.length; i++){
-    list[i] = i;
-  }
-  items.sort(function(a,b){ return b.children[1].children[1].children[0].children[0].value - a.children[1].children[1].children[0].children[0].value});
+  var items = Array.prototype.slice.call(wrapper[0].children);
+  alert(items.size);
+  items.sort(function(a,b){return b.children[1].children[1].children[0].children[0].value - a.children[1].children[1].children[0].children[0].value});
   var elements = document.createDocumentFragment();
 
   for(let i = 0; i < items.length; i++){
