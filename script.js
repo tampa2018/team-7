@@ -19,6 +19,12 @@ function addPost(title, description, paragraph) {
   addElement('col' + postID, 'p', 'comments- + postID', '<span class="w3-padding-large w3-right"><b>Comments  </b> <span class="w3-tag">0</span></span>');
 }
 
+function newPost(){
+  addElement('submit', 'submithead', 'h2', 'User Post');
+  addElement('submit', 'form', 'form', '<h2>User post</h2><form action="/action_page.php">Name:<br><input type="text" name="Name" value=""><br>Tags:<br><input type="text" name="Tags" value=""><br><br>Post:<br><textarea name="Post" cols="40" rows="5"></textarea><br><br><input type="submit" value="Submit">');
+  addPost()
+}
+
 function addElement(parentId, elementTag, elementId, html) {
     // Adds an element to the document
     var p = document.getElementById(parentId);

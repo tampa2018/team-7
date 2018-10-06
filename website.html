@@ -29,20 +29,22 @@ and is wrapped around the whole page content, except for the footer in this exam
 </head>
 <body>
 
-  <h2>User post</h2>
+  <div id = "submit">
+    <h2>User post</h2>
 
-  <form action="/action_page.php">
-    Name:<br>
-    <input type="text" name="Name" value="">
-    <br>
-    Tags:<br>
-    <input type="text" name="Tags" value="">
-    <br><br>
-    Post:<br>
-    <textarea name="Post" cols="40" rows="5"></textarea>
-    <br><br>
-    <input type="submit" value="Submit">
-  </form>
+    <form action="/action_page.php">
+      Name:<br>
+      <input type="text" name="Name" value="">
+      <br>
+      Tags:<br>
+      <input type="text" name="Tags" value="">
+      <br><br>
+      Post:<br>
+      <textarea name="Post" cols="40" rows="5"></textarea>
+      <br><br>
+      <input type="submit" value="Submit">
+    </form>
+</div>
 
 
 <div class="navbar">
@@ -84,7 +86,7 @@ window.onclick = function(e) {
 <!-- Grid -->
 <div class="w3-row">
 <!-- Submit Post Button -->
-<p><button class="newpost" onClick="addPost()"><b>SUBMIT POST</b></button></p>
+<p><button class="newpost" onClick="newPost()"><b>SUBMIT POST</b></button></p>
 
 
 <!-- Blog entries -->
