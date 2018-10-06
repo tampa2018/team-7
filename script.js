@@ -3,10 +3,13 @@ var postID = 0;
 
 function addPost() {
   postID++;
-  var html = '<b>NEW POST</b>';
   addDiv('w3-col l8 s12', 'card' + postID, 'w3-card-4 w3-margin w3-white');
   addDiv('card' + postID, 'container' + postID, 'w3-container');
-  addElement('container' + postID, 'h3', 'post-' + postID, html);
+  addElement('container' + postID, 'h3', 'title-' + postID, '<b>NEW POST</b>');
+  addElement('container' + postID, 'h5', 'description-' + postID, 'Title description, <span class="w3-opacity">April 20, 2018</span>');
+  addDiv('card' + postID, 'container 2' + postID, 'w3-container');
+  addElement('container 2' + postID, 'p', 'paragraph-' + postID, 'This is a paragraph');
+  addDiv('container 2' + postID, 'row' + postID, 'w3-row');
 }
 
 function addElement(parentId, elementTag, elementId, html) {
