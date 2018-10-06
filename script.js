@@ -2,6 +2,10 @@
 //Adding posts
 
 var postID = 0;
+//populate Array
+function populateArray(){
+  var posts = defaultPosts();
+}
 
 function addPost(title, description, paragraph) {
   postID++;
@@ -37,8 +41,6 @@ function addElement(parentId, elementTag, elementId, html) {
 function addButton(parentId){
   var button = document.createElement('button');
   button.setAttribute('class', "w3-button w3-padding-large w3-white w3-border");
-  button.setAttribute('onClick', 'like(this)');
-  button.setAttribute('value', '0');
   var image = document.createElement('img')
   image.setAttribute('src', 'Images\\like.jpg');
   image.setAttribute('alt', 'Header');
@@ -50,6 +52,7 @@ function addButton(parentId){
   button.appendChild(likes);
   var p = document.getElementById(parentId);
   p.appendChild(button);
+  alert("bruh");
 }
 
 function addDiv(parentId, elementID, classID){
@@ -66,14 +69,15 @@ function addDiv(parentId, elementID, classID){
 //Rearranging Posts
 
 function reArrange(){
+  var arr = [2,1,0];
   var wrapper = document.getElementsByClassName("w3-col l8 s12");
   var items = Array.prototype.slice.call(wrapper[0].children);
   items.sort(function(a,b){return b.children[1].children[1].children[0].children[0].value - a.children[1].children[1].children[0].children[0].value});
   var elements = document.createDocumentFragment();
 
-  for(let i = 0; i < items.length; i++){
-    elements.appendChild(items[i]);
-  }
+  arr.forEach(function(idx) {
+      elements.appendChild(items[idx].cloneNode(true));
+  });
 
   wrapper[0].innerHTML = null;
   wrapper[0].appendChild(elements);
@@ -81,6 +85,7 @@ function reArrange(){
 
 function like(button){
     //if (button.pressed != true || button.top == true){
+    if (button.pressed != true){
       button.value++;
       //button.pressed = true;
     //}
