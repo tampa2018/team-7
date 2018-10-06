@@ -105,6 +105,14 @@ and is wrapped around the whole page content, except for the footer in this exam
   </div>
 </div>
 
+<div class="fb-login-button" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false">
+</div>
+
+<fb:login-button
+  scope="public_profile,email"
+  onlogin="checkLoginState();">
+</fb:login-button>
+
 <script>
 /* When the user clicks on the button,
 toggle between hiding and showing the dropdown content */
@@ -261,7 +269,7 @@ window.onclick = function(e) {
 <script>
 window.fbAsyncInit = function() {
  FB.init({
-   appId            : ‘your-app-id’,
+   appId            : ‘311578179652674’,
    autoLogAppEvents : true,
    xfbml            : true,
    version          : ‘v3.1’
@@ -278,4 +286,38 @@ window.fbAsyncInit = function() {
 </script>
 
 </body>
+
+
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '{311578179652674}',
+      cookie     : true,
+      xfbml      : true,
+      version    : '{v3.1}'
+    });
+
+    FB.AppEvents.logPageView();
+
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.1&appId=311578179652674&autoLogAppEvents=1';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
 </html>
