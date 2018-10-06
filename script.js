@@ -72,7 +72,6 @@ function reArrange(){
   }
 =======
   var items = Array.prototype.slice.call(wrapper[0].children);
-  alert(items.size);
   items.sort(function(a,b){return b.children[1].children[1].children[0].children[0].value - a.children[1].children[1].children[0].children[0].value});
 >>>>>>> 35b1de0fb5d8530801d51f39027b0a93be74c414
   var elements = document.createDocumentFragment();
@@ -86,5 +85,14 @@ function reArrange(){
 }
 
 function like(button){
+<<<<<<< HEAD
 
+=======
+    if (button.pressed != true){
+      button.value++;
+      button.pressed = true;
+    }
+    button.children[1].innerHTML = '<b>' + button.value + '</b>';
+    reArrange();
+>>>>>>> 471abaebfe1297d9f8faa97c6aef21bfea0828c7
 }

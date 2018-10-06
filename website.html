@@ -29,6 +29,22 @@ and is wrapped around the whole page content, except for the footer in this exam
 </head>
 <body>
 
+  <h2>User post</h2>
+
+  <form action="/action_page.php">
+    Name:<br>
+    <input type="text" name="Name" value="">
+    <br>
+    Tags:<br>
+    <input type="text" name="Tags" value="">
+    <br><br>
+    Post:<br>
+    <textarea name="Post" cols="40" rows="5"></textarea>
+    <br><br>
+    <input type="submit" value="Submit">
+  </form>
+
+
 <div class="navbar">
   <a href="#home">Home</a>
   <a href="#news">Our Mission</a>
@@ -69,7 +85,7 @@ window.onclick = function(e) {
 <div class="w3-row">
 <!-- Submit Post Button -->
 <p><button class="newpost" onClick="addPost()"><b>SUBMIT POST</b></button></p>
-<p><button class="newpost" onClick="reArrange()"><b>REARRANGE</b></button></p>
+
 
 <!-- Blog entries -->
 <div class="w3-col l8 s12">
@@ -108,7 +124,7 @@ window.onclick = function(e) {
         tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
       <div class="w3-row">
         <div class="w3-col m8 s12">
-          <button class="w3-button w3-padding-large w3-white w3-border" value = '0'><img src="Images\like.jpg" alt="Header" width="30" height="30"><b>0</b></button>
+          <button class="w3-button w3-padding-large w3-white w3-border" value = '0' pressed = 'false'><img src="Images\like.jpg" alt="Header" width="30" height="30"><b>0</b></button>
         </div>
         <div class="w3-col m4 w3-hide-small">
           <p><span class="w3-padding-large w3-right"><b>Comments  </b> <span class="w3-badge">2</span></span></p>
@@ -178,8 +194,6 @@ window.onclick = function(e) {
 
 <!-- Footer -->
 <footer class="w3-container w3-dark-grey w3-padding-32 w3-margin-top">
-  <button class="w3-button w3-black w3-disabled w3-padding-large w3-margin-bottom">Previous</button>
-  <button class="w3-button w3-black w3-padding-large w3-margin-bottom">Next »</button>
   <p>Co-facilitated by Rebecca Fishman Lipsey, Martha Viciedo and Ralph Rosado.</p>
   <p>                                                                         </p>
   <p>With thanks to the first Miami class of the Young American Leaders program, Ana Coles, Barron Channer, Rep Jose Javier Rodriquez, Matt</p>
