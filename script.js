@@ -76,6 +76,5 @@ function reArrange(){
 }
 
 function like(button){
-  var likes = parseInt(button.childNodes[1].innerHTML);
-  button.childNodes[1].innerHTML = '<b>' + (likes + 1) + '</b>';
+
 }
