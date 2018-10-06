@@ -72,7 +72,49 @@ function reArrange(){
   wrapper[0].appendChild(elements);
 }
 
+<<<<<<< HEAD
+=======
+function quickSort(arr, left, right, arr2){
+  var len = arr.length,
+  pivot,
+  partitionIndex;
+  if(left < right){
+    pivot = right;
+    partitionIndex = partition(arr, pivot, left, right, arr2);
+
+  //sort left and right
+  quickSort(arr, left, partitionIndex - 1, arr2);
+  quickSort(arr, partitionIndex + 1, right, arr2);
+  }
+ return arr2;
+}
+
+function partition(arr, pivot, left, right, arr2){
+  var pivotValue = arr[pivot].children[1].children[1].children[0].children[0].value,
+      partitionIndex = left;
+  alert("yo");
+  for(var i = left; i < right; i++){
+   if(arr[i].children[1].children[1].children[0].children[0].value < pivotValue){
+     swap(arr, i, partitionIndex);
+     swap(arr2, i, partitionIndex);
+     partitionIndex++;
+   }
+ }
+ swap(arr, right, partitionIndex);
+ swap(arr2, right, partitionIndex);
+ return partitionIndex;
+}
+
+function swap(arr, i, j){
+  var temp = arr[i];
+  arr[i] = arr[j];
+  arr[j] = temp;
+  console.log(i + " swapped with " + j);
+}
+
+>>>>>>> ffb9e7319a5fba1da79b3c6ee5acf1b0e158b40b
 function like(button){
     button.value++;
     button.children[1].innerHTML = '<b>' + button.value + '</b>';
+    reArrange();
 }
