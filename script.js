@@ -74,13 +74,13 @@ function reArrange(){
 }
 
 function quickSort(arr, left, right, arr2){
-  var len = arr.length, 
+  var len = arr.length,
   pivot,
   partitionIndex;
   if(left < right){
     pivot = right;
     partitionIndex = partition(arr, pivot, left, right, arr2);
-   
+
   //sort left and right
   quickSort(arr, left, partitionIndex - 1, arr2);
   quickSort(arr, partitionIndex + 1, right, arr2);
@@ -114,4 +114,5 @@ function swap(arr, i, j){
 function like(button){
     button.value++;
     button.children[1].innerHTML = '<b>' + button.value + '</b>';
+    reArrange();
 }
