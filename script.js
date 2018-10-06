@@ -2,6 +2,10 @@
 //Adding posts
 
 var postID = 0;
+//populate Array
+function populateArray(){
+  var posts = defaultPosts();
+}
 
 function addPost() {
   postID++;
