@@ -3,6 +3,10 @@
 
 var postID = 0;
 
+var post{
+  "postText"=
+}
+
 function addPost() {
   postID++;
   addDiv('w3-col l8 s12', 'card' + postID, 'w3-card-4 w3-margin w3-white');
