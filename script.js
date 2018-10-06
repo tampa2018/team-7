@@ -1,4 +1,6 @@
 
+//Adding posts
+
 var postID = 0;
 
 function addPost() {
@@ -34,4 +36,20 @@ function addDiv(parentId, elementID, classID){
     }
     p.appendChild(div);
 
+}
+
+//Rearranging Posts
+
+function reArrange(){
+  var arr = [2,1,0];
+  var wrapper = document.getElementsByClassName("w3-col l8 s12");
+  var items = wrapper[0].children;
+  var elements = document.createDocumentFragment();
+
+  arr.forEach(function(idx) {
+      elements.appendChild(items[idx].cloneNode(true));
+  });
+
+  wrapper[0].innerHTML = null;
+  wrapper[0].appendChild(elements);
 }
