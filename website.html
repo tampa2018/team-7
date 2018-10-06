@@ -1,5 +1,10 @@
 <!DOCTYPE html>
 <html>
+ <head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
 <title>100 Great Ideas</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,6 +16,30 @@
 </style>-->
 <body class="w3-light-grey">
 
+   <div id="CommentModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <span class="close">&times;</span>
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Comment Submission Page</h4>
+      </div>
+      <div class="modal-body">
+        <p>
+          <textarea rows="4" cols="50">
+            Input your comments here. Replace this text with your poop.
+        </textarea>
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" onclick="commentButtonFunction()">Submit</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+ 
 <script src = "script.js"></script>
 <!-- w3-content defines a container for fixed size centered content,
 and is wrapped around the whole page content, except for the footer in this example -->
@@ -125,7 +154,7 @@ window.onclick = function(e) {
           <button class="w3-button w3-padding-large w3-white w3-border" value = '0' pressed = 'false'><img src="Images\like.jpg" alt="Header" width="30" height="30"><b>0</b></button>
         </div>
         <div class="w3-col m4 w3-hide-small">
-          <p><span class="w3-padding-large w3-right"><b>Comments  </b> <span class="w3-badge">2</span></span></p>
+          <p><span class="w3-padding-large w3-right"><b> <button type="button" data-toggle="modal" data-target="#CommentModal">Comments</button>  </b> <span class="w3-tag">8</span></span></p>
         </div>
       </div>
     </div>
@@ -220,6 +249,35 @@ window.fbAsyncInit = function() {
   js.src = “https://connect.facebook.net/en_US/sdk.js“;
   fjs.parentNode.insertBefore(js, fjs);
 }(document, ‘script’, ‘facebook-jssdk’));
+</script>
+ 
+ <script>
+// Get the modal
+var modal = document.getElementById('CommentModal');
+
+// Get the button that opens the modal
+var btn = document.getElementById("Comments");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal
+Comments.onclick = function() {
+    modal.style.display = "block";
+    //going to call js function to record content
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
 </script>
 
 </body>
