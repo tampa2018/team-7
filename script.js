@@ -9,13 +9,14 @@ function populateArray(){
 
 function addPost(title, description, paragraph) {
   postID++;
+  console.log(title, description, paragraph);
   var d = new Date();
   addDiv('w3-col l8 s12', 'card' + postID, 'w3-card-4 w3-margin w3-white');
   addDiv('card' + postID, 'container' + postID, 'w3-container');
   addElement('container' + postID, 'h3', 'title-' + postID, '<b>' + title + '</b>');
-  addElement('container' + postID, 'h5', 'description-' + postID, 'Title description, <span class="w3-opacity">April 20, 2018</span>');
+  addElement('container' + postID, 'h5', 'description-' + postID, description +  '<span class="w3-opacity"> April 20, 2018</span>');
   addDiv('card' + postID, 'container 2' + postID, 'w3-container');
-  addElement('container 2' + postID, 'p', 'paragraph-' + postID, 'This is a paragraph');
+  addElement('container 2' + postID, 'p', 'paragraph-' + postID, paragraph);
   addDiv('container 2' + postID, 'row' + postID, 'w3-row');
   addDiv('row' + postID, 'button' + postID, 'w3-col m8 s12');
   addButton('button' + postID);
@@ -25,8 +26,14 @@ function addPost(title, description, paragraph) {
 
 function newPost(){
   addElement('submit', 'submithead', 'h2', 'User Post');
-  addElement('submit', 'form', 'form', '<h2>User post</h2><form action="/action_page.php">Name:<br><input type="text" name="Name" value=""><br>Tags:<br><input type="text" name="Tags" value=""><br><br>Post:<br><textarea name="Post" cols="40" rows="5"></textarea><br><br><input type="submit" value="Submit">');
-  addPost()
+  addElement('submit', 'form', 'form', '<h2>User post</h2><form action="/action_page.php">Name:<br><input type="text" name="Name" value=""><br>Tags:<br><input type="text" name="Tags" value=""><br><br>Post:<br><textarea name="Post" cols="40" rows="5"></textarea><br><br><p><button type = "button" class="newpost" onClick="makeNewPost()"><b>Submit</b></button></p>');
+}
+
+function makeNewPost(){
+  var t = document.getElementById('form').elements[0].value;
+  var d = document.getElementById('form').elements[1].value;
+  var p = document.getElementById('form').elements[2].value;
+  addPost(t, d, p);
 }
 
 function addElement(parentId, elementTag, elementId, html) {
@@ -41,6 +48,7 @@ function addElement(parentId, elementTag, elementId, html) {
 function addButton(parentId){
   var button = document.createElement('button');
   button.setAttribute('class', "w3-button w3-padding-large w3-white w3-border");
+  button.setAttribute('onClick', 'like(this);');
   var image = document.createElement('img')
   image.setAttribute('src', 'Images\\like.jpg');
   image.setAttribute('alt', 'Header');
@@ -52,7 +60,6 @@ function addButton(parentId){
   button.appendChild(likes);
   var p = document.getElementById(parentId);
   p.appendChild(button);
-  alert("bruh");
 }
 
 function addDiv(parentId, elementID, classID){
@@ -69,15 +76,14 @@ function addDiv(parentId, elementID, classID){
 //Rearranging Posts
 
 function reArrange(){
-  var arr = [2,1,0];
   var wrapper = document.getElementsByClassName("w3-col l8 s12");
   var items = Array.prototype.slice.call(wrapper[0].children);
   items.sort(function(a,b){return b.children[1].children[1].children[0].children[0].value - a.children[1].children[1].children[0].children[0].value});
   var elements = document.createDocumentFragment();
 
-  arr.forEach(function(idx) {
-      elements.appendChild(items[idx].cloneNode(true));
-  });
+  for (let i = 0; i < items.length; i++){
+    elements.appendChild(items[i]);
+  }
 
   wrapper[0].innerHTML = null;
   wrapper[0].appendChild(elements);
@@ -85,10 +91,12 @@ function reArrange(){
 
 function like(button){
     //if (button.pressed != true || button.top == true){
-    if (button.pressed != true){
+    //if (button.pressed != true){
       button.value++;
       //button.pressed = true;
     //}
     button.children[1].innerHTML = '<b>' + button.value + '</b>';
     reArrange();
 }
+
+

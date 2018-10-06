@@ -29,10 +29,10 @@ and is wrapped around the whole page content, except for the footer in this exam
 </head>
 <body>
 
-  <div id = "submit">
+  <div id = 'submit'>
     <h2>User post</h2>
 
-    <form action="/action_page.php">
+    <form id = 'form' action="/action_page.php">
       Name:<br>
       <input type="text" name="Name" value="">
       <br>
@@ -42,7 +42,7 @@ and is wrapped around the whole page content, except for the footer in this exam
       Post:<br>
       <textarea name="Post" cols="40" rows="5"></textarea>
       <br><br>
-      <input type="submit" value="Submit">
+      <p><button type = 'button' class="newpost" onClick="makeNewPost()"><b>Submit</b></button></p>
     </form>
 </div>
 
