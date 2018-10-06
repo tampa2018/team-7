@@ -31,12 +31,16 @@ function addButton(parentId){
   var button = document.createElement('button');
   button.setAttribute('class', "w3-button w3-padding-large w3-white w3-border");
   var image = document.createElement('img')
-  image.setAttribute('src', 'Images\like.jpg');
+  image.setAttribute('src', 'Images\\like.jpg');
   image.setAttribute('alt', 'Header');
   image.setAttribute('width', '30');
   image.setAttribute('height', '30');
   button.appendChild(image);
-  button.setAttribute('value', '<b>0</b>');
+  var likes = document.createElement('p');
+  likes.innerHTML = '<b>0</b>';
+  button.appendChild(likes);
+  var p = document.getElementById(parentId);
+  p.appendChild(button);
   alert("bruh");
 }
 
@@ -49,7 +53,6 @@ function addDiv(parentId, elementID, classID){
       p = document.getElementById(parentId);
     }
     p.appendChild(div);
-
 }
 
 //Rearranging Posts
@@ -70,4 +73,8 @@ function reArrange(){
 
   wrapper[0].innerHTML = null;
   wrapper[0].appendChild(elements);
+}
+
+function like(button){
+
 }
