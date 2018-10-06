@@ -73,7 +73,10 @@ function reArrange(){
 }
 
 function like(button){
-    if (button.pressed)
-    button.value++;
+    if (button.pressed != true){
+      button.value++;
+      button.pressed = true;
+    }
     button.children[1].innerHTML = '<b>' + button.value + '</b>';
+    reArrange();
 }
