@@ -17,6 +17,7 @@ and is wrapped around the whole page content, except for the footer in this exam
 <div class="w3-content" style="max-width:1400px">
 
 <!-- Header -->
+<head>
 <header class="w3-container w3-center w3-padding-32">
     <img src="Images\Website title.jpg" alt="Header" width="800" height="270">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -24,69 +25,7 @@ and is wrapped around the whole page content, except for the footer in this exam
 <h1><b>100 Great Ideas</b></h1>
 <h4>The future of transit and mobility in Miami</span></h4>
 <h6>Provided by Radical Partners</span></h6>
-<style>
-.navbar {
-    overflow: hidden;
-    background-color: #333;
-    font-family: Arial, Helvetica, sans-serif;
-}
 
-.navbar a {
-    float: left;
-    font-size: 16px;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-
-.dropdown {
-    float: left;
-    overflow: hidden;
-}
-
-.dropdown .dropbtn {
-    cursor: pointer;
-    font-size: 16px;
-    border: none;
-    outline: none;
-    color: white;
-    padding: 14px 16px;
-    background-color: inherit;
-    font-family: inherit;
-    margin: 0;
-}
-
-.navbar a:hover, .dropdown:hover .dropbtn, .dropbtn:focus {
-    background-color: red;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-}
-
-.dropdown-content a {
-    float: none;
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-}
-
-.dropdown-content a:hover {
-    background-color: #ddd;
-}
-
-.show {
-    display: block;
-}
-</style>
 </head>
 <body>
 
@@ -150,7 +89,7 @@ window.onclick = function(e) {
           <button class="w3-button w3-padding-large w3-white w3-border" onClick="like(this)" value = '0'><img src="Images\like.jpg" alt="Header" width="30" height="30"><b>0</b></button>
         </div>
         <div class="w3-col m4 w3-hide-small">
-          <p><span class="w3-padding-large w3-right"><b>Comments  </b> <span class="w3-tag">0</span></span></p>
+          <p><span class="w3-padding-large w3-right"><b>Comments  </b> <span class="w3-tag">8</span></span></p>
         </div>
       </div>
     </div>
@@ -197,39 +136,28 @@ window.onclick = function(e) {
   </div>
 
   <!-- About Card -->
-  <div class="w3-card w3-margin w3-margin-top">
-  <img src="/w3images/avatar_g.jpg" style="width:100%">
-    <div class="w3-container w3-white">
-      <h4><b>My Name</b></h4>
-      <p>Just me, myself and I, exploring the universe of uknownment. I have a heart of love and a interest of lorem ipsum and mauris neque quam blog. I want to share my world with you.</p>
-    </div>
-  </div><hr>
 
   <!-- Posts -->
   <div class="w3-card w3-margin">
     <div class="w3-container w3-padding">
-      <h4>Popular Posts</h4>
+      <h4>Recent Posts</h4>
     </div>
     <ul class="w3-ul w3-hoverable w3-white">
       <li class="w3-padding-16">
-        <img src="/w3images/workshop.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
-        <span class="w3-large">Lorem</span><br>
-        <span>Sed mattis nunc</span>
+        <span class="w3-large">Trees around Bus Stop.</span><br>
+        <span>Trees at bus stops not only protect from the sun, but they decrease perceived wait times, as well.</span>
       </li>
       <li class="w3-padding-16">
-        <img src="/w3images/gondol.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
-        <span class="w3-large">Ipsum</span><br>
-        <span>Praes tinci sed</span>
+        <span class="w3-large">High Speed Buses</span><br>
+        <span>High speed buses would be dreamy to start. I also know in some other cities they have almost like an Uber-like app/ system for buses. </span>
       </li>
       <li class="w3-padding-16">
-        <img src="/w3images/skies.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
-        <span class="w3-large">Dorum</span><br>
-        <span>Ultricies congue</span>
+        <span class="w3-large">Zebra crosswalks</span><br>
+        <span>When I served on the Miami-Dade Metropolitan Planning Organization's Bicycle Pedestrian Advisory Committee (BPAC), I proposed a resolution to have 'zebra' style crosswalks for all intersections in Miami.</span>
       </li>
       <li class="w3-padding-16 w3-hide-medium w3-hide-small">
-        <img src="/w3images/rock.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
-        <span class="w3-large">Mingsum</span><br>
-        <span>Lorem ipsum dipsum</span>
+        <span class="w3-large">Flexible hours at work</span><br>
+        <span>How about getting businesses to implement flexible hours and work from home days more frequently?</span>
       </li>
     </ul>
   </div>
