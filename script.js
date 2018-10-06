@@ -1,10 +1,14 @@
 
 //Adding posts
-
+var posts = [];
 var postID = 0;
 //populate Array
 function populateArray(){
-  var posts = defaultPosts();
+  this.posts = defaultPosts();
+}
+
+function deft() {
+  return this.posts[0].text;
 }
 
 function addPost(title, description, paragraph) {
