@@ -61,7 +61,6 @@ function addDiv(parentId, elementID, classID){
 function reArrange(){
   var wrapper = document.getElementsByClassName("w3-col l8 s12");
   var items = Array.prototype.slice.call(wrapper[0].children);
-  alert(items.size);
   items.sort(function(a,b){return b.children[1].children[1].children[0].children[0].value - a.children[1].children[1].children[0].children[0].value});
   var elements = document.createDocumentFragment();
 
@@ -71,44 +70,6 @@ function reArrange(){
 
   wrapper[0].innerHTML = null;
   wrapper[0].appendChild(elements);
-}
-
-function quickSort(arr, left, right, arr2){
-  var len = arr.length, 
-  pivot,
-  partitionIndex;
-  if(left < right){
-    pivot = right;
-    partitionIndex = partition(arr, pivot, left, right, arr2);
-   
-  //sort left and right
-  quickSort(arr, left, partitionIndex - 1, arr2);
-  quickSort(arr, partitionIndex + 1, right, arr2);
-  }
- return arr2;
-}
-
-function partition(arr, pivot, left, right, arr2){
-  var pivotValue = arr[pivot].children[1].children[1].children[0].children[0].value,
-      partitionIndex = left;
-  alert("yo");
-  for(var i = left; i < right; i++){
-   if(arr[i].children[1].children[1].children[0].children[0].value < pivotValue){
-     swap(arr, i, partitionIndex);
-     swap(arr2, i, partitionIndex);
-     partitionIndex++;
-   }
- }
- swap(arr, right, partitionIndex);
- swap(arr2, right, partitionIndex);
- return partitionIndex;
-}
-
-function swap(arr, i, j){
-  var temp = arr[i];
-  arr[i] = arr[j];
-  arr[j] = temp;
-  console.log(i + " swapped with " + j);
 }
 
 function like(button){
