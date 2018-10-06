@@ -12,7 +12,6 @@ function addPost() {
 function addElement(parentId, elementTag, elementId, html) {
     // Adds an element to the document
     var p = document.getElementById(parentId);
-    alert("bruh");
     var newElement = document.createElement(elementTag);
     newElement.setAttribute('id', elementId);
     newElement.innerHTML = html;
@@ -22,12 +21,11 @@ function addElement(parentId, elementTag, elementId, html) {
 function addDiv(parentId, elementID, classID){
     var div = document.createElement('div');
     div.setAttribute('id', elementID);
-    div.class = classID;
+    div.setAttribute('class', classID);
     var p = document.getElementsByClassName(parentId)[0];
     if (p == undefined){
       p = document.getElementById(parentId);
     }
     p.appendChild(div);
-    alert(parentId);
 
 }
