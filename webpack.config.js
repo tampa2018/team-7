@@ -1,20 +1,26 @@
-const path = require('path');
-
 module.exports = {
-  entry: './src/app.js',
+  entry: ["./src/index.js"],
   output: {
-    path: path.join(__dirname, 'public'),
-    filename: 'bundle.js'
+    path: __dirname,
+    publicPath: "/",
+    filename: "bundle.js"
   },
   module: {
-    rules: [{
-      loader: 'babel-loader',
-      test: /\.js$/,
-      exclude: /node_modules/
-    }]
+    loaders: [
+      {
+        exclude: /node_modules/,
+        loader: "babel",
+        query: {
+          presets: ["react", "es2015", "stage-1"]
+        }
+      }
+    ]
   },
-  devtool: 'cheap-module-eval-source-map',
+  resolve: {
+    extensions: ["", ".js", ".jsx"]
+  },
   devServer: {
-    contentBase: path.join(__dirname, 'public')
+    historyApiFallback: true,
+    contentBase: "./"
   }
 };
