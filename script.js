@@ -60,11 +60,17 @@ function addDiv(parentId, elementID, classID){
 function reArrange(){
   var arr = [2,1,0];
   var wrapper = document.getElementsByClassName("w3-col l8 s12");
+<<<<<<< HEAD
   var items = wrapper[0].children;
   var arr;
   for (let i = 0; i < items.length; i++){
     arr[i] = parseInt(items[i].childNodes[1].childNodes[1].childNodes[0].childNodes[0].value);
   }
+=======
+  var items = Array.prototype.slice.call(wrapper[0].children);
+  alert(items.size);
+  items.sort(function(a,b){return b.children[1].children[1].children[0].children[0].value - a.children[1].children[1].children[0].children[0].value});
+>>>>>>> 35b1de0fb5d8530801d51f39027b0a93be74c414
   var elements = document.createDocumentFragment();
 
   arr.forEach(function(idx) {
