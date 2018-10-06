@@ -13,7 +13,7 @@ function addPost() {
   addElement('container 2' + postID, 'p', 'paragraph-' + postID, 'This is a paragraph');
   addDiv('container 2' + postID, 'row' + postID, 'w3-row');
   addDiv('row' + postID, 'button' + postID, 'w3-col m8 s12');
-  addElement('button' + postID, 'button')
+  addButton('button' + postID);
   addDiv('row' + postID, 'col' + postID, 'w3-col m4 w3-hide-small');
   addElement('col' + postID, 'p', 'comments- + postID', '<span class="w3-padding-large w3-right"><b>Comments  </b> <span class="w3-tag">0</span></span>');
 }
@@ -34,7 +34,10 @@ function addButton(parentId){
   image.setAttribute('src', 'Images\like.jpg');
   image.setAttribute('alt', 'Header');
   image.setAttribute('width', '30');
-  button.setAttribute('img')
+  image.setAttribute('height', '30');
+  button.appendChild(image);
+  button.setAttribute('value', '<b>0</b>');
+  alert("bruh");
 }
 
 function addDiv(parentId, elementID, classID){
