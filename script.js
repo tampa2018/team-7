@@ -10,6 +10,9 @@ function addPost() {
   addDiv('card' + postID, 'container 2' + postID, 'w3-container');
   addElement('container 2' + postID, 'p', 'paragraph-' + postID, 'This is a paragraph');
   addDiv('container 2' + postID, 'row' + postID, 'w3-row');
+  addDiv('row' + postID, 'space' + postID, 'w3-col m8 s12');
+  addDiv('row' + postID, 'col' + postID, 'w3-col m4 w3-hide-small');
+  addElement('col' + postID, 'p', 'comments- + postID', '<span class="w3-padding-large w3-right"><b>Comments  </b> <span class="w3-tag">0</span></span>');
 }
 
 function addElement(parentId, elementTag, elementId, html) {
